@@ -1,0 +1,24 @@
+<!--pages/classify/classify.wxml-->
+<view class="container">
+    <view class="myswiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{imgUrls}}" wx:key="index">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image"  />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class="classify-bd">
+        <block wx:for="{{classify}}" wx:key = "index">
+        
+            <navigator class="classify-bd__class"  url= "../class/{{item.where}}/{{item.where}}?where={{item.where}}">
+            <image class="classify-bd__class__img" src="{{item.url}}"/>
+            <view class="classify-bd__class__items">
+            {{item.class}}
+            </view>
+        </navigator>
+        </block>
+    </view>
+</view>
+

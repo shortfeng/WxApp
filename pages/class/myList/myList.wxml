@@ -1,0 +1,50 @@
+<view class='container'>
+ <!--轮播图-->
+  <view class="myswiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" >
+            <block wx:for="{{myImage}}" wx:key="index">
+                <swiper-item>
+                    <image src="{{item}}" class="slide-image"  />
+                </swiper-item>
+            </block>
+        </swiper>
+  </view>
+
+  <!--广告图-->
+  <view class="myListImg">
+  <image src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2552960110,2296752848&fm=15&gp=0.jpg' mode='center'></image>
+  </view>
+  <view class='myListList'>
+      <text>{{myIntroduce}}</text>
+      <text>{{myList}}</text>
+      <text>￥{{myPrice}}</text>
+
+  </view>
+  <view class='myListSale'>
+      <text>sale</text>
+      <text>现在下单，可享受对折</text>
+  </view>
+  <view class='myListtext'>
+      <text>详情</text>
+      <view>
+          <text>产地</text>
+          <text>生鲜储存温度</text>
+          <text>储藏方式</text>
+      </view>
+      <view>
+          <text>襄阳</text>
+          <text>0-8℃</text>
+          <text>冷藏</text>
+      </view>
+  </view>
+  <view class='myListPic'>
+    <block wx:for="{{myPic}}" wx:key="index">
+      <image src='{{item}}'></image>
+    </block>
+  </view>
+</view>  
+<view class="btn" bindtap="ordinInCart" data-id="{{Iid}}" data-stock="{{myStock}}">
+  <view class='cart'>   
+        <text  bindtap="gotoCart" class='cartButton'>加入购物车</text>
+  </view>  
+</view>
